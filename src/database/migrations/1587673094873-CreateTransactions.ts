@@ -50,6 +50,7 @@ export default class CreateTransactions1587673094873
       }),
     );
 
+    // Chave estrangeira
     await queryRunner.createForeignKey(
       'transactions',
       new TableForeignKey({

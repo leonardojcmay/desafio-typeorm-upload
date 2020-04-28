@@ -10,8 +10,8 @@ interface TransactionI {
   title: string;
   type: 'income' | 'outcome';
   value: number;
-  category_id?: string;
-  category?: string;
+  category_id?: string; // Pode ser string ou undefined
+  category?: string; // Pode ser string ou undefined
 }
 
 interface CategoryI {
@@ -23,6 +23,7 @@ class ImportTransactionsService {
     const categoriesRepository = getRepository(Category);
     const transactionsRepository = getCustomRepository(TransactionsRepository);
 
+    // Essa função faz o papel de ler o arquivo por partes conforme for necessário sem precisar armazenar o arquivo inteiro na memória da aplicação
     const readStream = fs.createReadStream(filepath);
 
     const CSV = readStream.pipe(csv());

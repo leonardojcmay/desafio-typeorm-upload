@@ -16,6 +16,7 @@ class CreateCategoryService {
       where: { title }, // verificando se contem alguma categoria com o mesmo title que esta se recebendo
     });
 
+    // Se category ja existe
     if (checkCategoryExists) {
       throw new AppError('Title already used.');
     }

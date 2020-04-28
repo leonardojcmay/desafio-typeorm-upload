@@ -5,6 +5,7 @@ import categoriesRouter from './categories.routes';
 
 const routes = Router();
 
+// rotas
 routes.use('/categories', categoriesRouter);
 routes.use('/transactions', transactionsRouter);
 
